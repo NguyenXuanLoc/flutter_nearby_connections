@@ -47,7 +47,7 @@ class NearbyService {
   ///
   /// param [deviceId] is unique, you should use the UDID for [deviceId]
   /// param [strategy] Nearby Connections supports different Strategies for advertising and discovery. The best Strategy to use depends on the use case. only support android OS
-  Future init(
+  Future  init(
       {required String serviceType,
       required Strategy strategy,
       String? deviceName,

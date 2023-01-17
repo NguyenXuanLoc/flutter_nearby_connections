@@ -245,6 +245,7 @@ class _DevicesListScreenState extends State<DevicesListScreen> {
                 TextButton(
                   child: Text("Send"),
                   onPressed: () {
+                    print("TAG SENT MESSSAGE");
                     nearbyService.sendMessage(
                         device.deviceId, myController.text);
                     myController.text = '';
@@ -293,7 +294,7 @@ class _DevicesListScreenState extends State<DevicesListScreen> {
       devInfo = iosInfo.localizedModel;
     }
     await nearbyService.init(
-        serviceType: 'mpconn',
+        serviceType: 'dartobservatory',
         deviceName: devInfo,
         strategy: Strategy.P2P_CLUSTER,
         callback: (isRunning) async {
