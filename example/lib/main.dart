@@ -245,7 +245,7 @@ class _DevicesListScreenState extends State<DevicesListScreen> {
                 TextButton(
                   child: Text("Send"),
                   onPressed: () {
-                    print("TAG SENT MESSSAGE");
+                    print("TAG SENT MESSSAGE: ${device.deviceId}");
                     nearbyService.sendMessage(
                         device.deviceId, myController.text);
                     myController.text = '';
@@ -266,6 +266,7 @@ class _DevicesListScreenState extends State<DevicesListScreen> {
   }
 
   _onButtonClicked(Device device) {
+    print("TAG device: ${json.encode(device).toString()}");
     switch (device.state) {
       case SessionState.notConnected:
         nearbyService.invitePeer(
